@@ -73,7 +73,7 @@
                                     shuffle($variants);
                                     ?>
 
-                                    <p>{{$item->olympiad_test_question_name_ru}}</p>
+                                    <p>{!!$item->olympiad_test_question_name_ru!!}</p>
 
                                     <div class="answers">
 

@@ -39,8 +39,8 @@
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
-{{--  <script src="/custom/ckeditor/ckeditor.js?v=12"></script>
-  <script src="/custom/ckeditor/config.js?v=36"></script>--}}
+  <script src="/custom/ckeditor/ckeditor.js?v=12"></script>
+  <script src="/custom/ckeditor/config.js?v=36"></script>
 
   <link rel="stylesheet" href="/custom/css/admin-custom.css?v=7">
   {{--<link rel="stylesheet" href="/custom/wysiwyg/default.css" />--}}

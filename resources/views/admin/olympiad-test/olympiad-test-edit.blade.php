@@ -56,8 +56,12 @@
                                                             <input value="{{ $row->olympiad_test_cost }}" type="number" class="form-control" name="olympiad_test_cost" placeholder="">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Количество вопросов</label>
+                                                            <label>Количество обычных вопросов</label>
                                                             <input value="{{ $row->olympiad_test_question_count }}" type="number" class="form-control" name="olympiad_test_question_count" placeholder="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Количество общих вопросов (педагогика)</label>
+                                                            <input value="{{ $row->special_question_count }}" type="number" class="form-control" name="special_question_count" placeholder="">
                                                         </div>
                                                         {{--<div class="form-group">
                                                             <label>Минимальный балл для диплома</label>

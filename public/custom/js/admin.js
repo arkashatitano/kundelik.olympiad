@@ -34,7 +34,7 @@ $(function() {
     $(".phone-mask").mask("+7(999)999-99-99");
 });
 
-KindEditor.ready(function(K) {
+/*KindEditor.ready(function(K) {
     K.create('.text_editor', {
 
         cssPath : [''],
@@ -87,7 +87,7 @@ KindEditor.ready(function(K) {
     var editor = K.editor({
         allowFileManager : true
     });
-});
+});*/
 
 /*$('.datetimepicker-input').datetimepicker({
     format: 'DD.MM.YYYY HH:mm'

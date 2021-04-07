@@ -99,6 +99,7 @@ class OlympiadTestController extends Controller
         $test->min_point_to_second_place = is_numeric($request->min_point_to_second_place)?$request->min_point_to_second_place:18;
         $test->min_point_to_first_place = is_numeric($request->min_point_to_first_place)?$request->min_point_to_first_place:16;
         $test->olympiad_test_question_count = is_numeric($request->olympiad_test_question_count)?$request->olympiad_test_question_count:20;
+        $test->special_question_count = is_numeric($request->special_question_count)?$request->special_question_count:0;
         $test->olympiad_test_cost = is_numeric($request->olympiad_test_cost)?$request->olympiad_test_cost:0;
         $test->olympiad_test_duration = is_numeric($request->olympiad_test_duration)?$request->olympiad_test_duration:100;
         $test->save();
@@ -167,6 +168,7 @@ class OlympiadTestController extends Controller
         $test->min_point_to_second_place = is_numeric($request->min_point_to_second_place)?$request->min_point_to_second_place:18;
         $test->min_point_to_first_place = is_numeric($request->min_point_to_first_place)?$request->min_point_to_first_place:16;
         $test->olympiad_test_question_count = is_numeric($request->olympiad_test_question_count)?$request->olympiad_test_question_count:20;
+        $test->special_question_count = is_numeric($request->special_question_count)?$request->special_question_count:0;
         $test->olympiad_test_cost = is_numeric($request->olympiad_test_cost)?$request->olympiad_test_cost:0;
         $test->olympiad_test_duration = is_numeric($request->olympiad_test_duration)?$request->olympiad_test_duration:100;
         $test->olympiad_test_url_ru = '/olympiad-test/'.$test->olympiad_test_id.'-'.Helpers::getTranslatedSlugRu($request->olympiad_test_name_ru);

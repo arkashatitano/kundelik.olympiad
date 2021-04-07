@@ -93,7 +93,7 @@
 <script type="text/javascript" src="/custom/wysiwyg/ru_Ru.js?v=1"></script>
 <script type="text/javascript" src="/custom/js/jquery.gritter.js"></script>
 
-<script src="/custom/js/admin.js?v=248"></script>
+<script src="/custom/js/admin.js?v=249"></script>
 
 
 <script>

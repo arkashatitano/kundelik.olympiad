@@ -158,12 +158,22 @@ class OlympiadController extends Controller
             ->take($olympiad->olympiad_test_question_count)
             ->get();
 
+        $special_question_list = OlympiadTestQuestion::where('is_show',1)
+            ->orderByRaw('RAND()')
+            ->whereNull('olympiad_test_id')
+            ->take($olympiad->special_question_count)
+            ->get();
+
+        $question_list = $question_list->merge($special_question_list); // Contains foo and bar.
+
+
         $deadline_time = date('Y-m-d H:i:s', strtotime('+'.$olympiad->olympiad_test_duration.' minutes', strtotime($user_olympiad_test->created_at)));
         $now_date = date('Y-m-d H:i:s');
 
         return  view('index.olympiad.olympiad',
             [
                 'olympiad' => $olympiad,
+                'special_question_list' => $special_question_list,
                 'question_list' => $question_list,
                 'user_olympiad_test_id' => $user_olympiad_test_id,
                 'date' => $deadline_time,

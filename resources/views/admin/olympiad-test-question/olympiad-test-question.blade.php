@@ -100,7 +100,11 @@
                                     {!! $val['olympiad_test_question_name_ru']!!}
                                 </td>
                                 <td>
-                                    {{ $val['olympiad_test_name_ru']}}
+                                    @if($val->olympiad_test_id > 0)
+                                        {{ $val['olympiad_test_name_ru']}}
+                                    @else
+                                        Вопрос по теме педагогике
+                                    @endif
                                 </td>
                                 <td style="text-align: center">
                                     <a href="javascript:void(0)" onclick="delItem(this,'{{ $val->olympiad_test_question_id }}','olympiad-test-question')">

@@ -62,8 +62,11 @@ class OlympiadTestQuestionController extends Controller
             });
         }
 
-        if(isset($request->olympiad_test_id)){
+        if($request->olympiad_test_id > 0){
             $row->where('olympiad_test_question.olympiad_test_id',$request->olympiad_test_id);
+        }
+        elseif(isset($request->olympiad_test_id)){
+            $row->whereNull('olympiad_test_question.olympiad_test_id');
         }
 
         $row = $row->paginate(20);
@@ -112,7 +115,7 @@ class OlympiadTestQuestionController extends Controller
         $question->variant4 = $request->variant4;
         $question->variant5 = $request->variant5;
         $question->correct_variant = $request->correct_variant;
-        $question->olympiad_test_id = $request->olympiad_test_id;
+        $question->olympiad_test_id = ($request->olympiad_test_id > 0)?$request->olympiad_test_id:null;
         $question->is_show = 1;
         $question->save();
 
@@ -175,7 +178,7 @@ class OlympiadTestQuestionController extends Controller
         $question->variant4 = $request->variant4;
         $question->variant5 = $request->variant5;
         $question->correct_variant = $request->correct_variant;
-        $question->olympiad_test_id = $request->olympiad_test_id;
+        $question->olympiad_test_id = ($request->olympiad_test_id > 0)?$request->olympiad_test_id:null;
         $question->is_show = 1;
         $question->save();
 

@@ -17,6 +17,7 @@
                 <div class="header-authorize">
                     @if(Auth::check())
                         <a class="login-link btn-transparent" href="/profile">Профиль</a>
+                        <a class="registration-link btn-main" href="/profile/test">Мои тесты</a>
                     @else
                         <a class="login-link btn-transparent" href="/auth/login">Войти</a>
                         <a class="registration-link btn-main" href="/auth/register">Регистрация</a>

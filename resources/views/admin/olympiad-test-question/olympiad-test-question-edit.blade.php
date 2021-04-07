@@ -42,13 +42,13 @@
                                                         <div class="form-group">
                                                             <label>Тест</label>
                                                             <select name="olympiad_test_id" data-placeholder="Выберите" class="form-control select2">
-                                                                <option></option>
+                                                                <option value="0">Вопрос по теме педагогике</option>
                                                                 @foreach($tests as $item)
                                                                     <option @if((isset($_GET['olympiad_test_id']) && $_GET['olympiad_test_id'] == $item->olympiad_test_id) || $item->olympiad_test_id == $row->olympiad_test_id) selected @endif value="{{$item->olympiad_test_id}}">{{$item->olympiad_test_name_ru}}</option>
                                                                 @endforeach
                                                             </select>
                                                         </div>
-                                                        <div class="form-group">
+                                                        {{--<div class="form-group">
                                                             <label>Язык (необязательно)</label>
                                                             <select name="olympiad_test_question_lang" data-placeholder="Выберите" class="form-control">
                                                                 <option @if($row->olympiad_test_question_lang == '') selected @endif value="">Не выбран</option>
@@ -56,10 +56,10 @@
                                                                 <option @if($row->olympiad_test_question_lang == 'ru') selected @endif value="ru">Русский</option>
                                                                 <option @if($row->olympiad_test_question_lang == 'en') selected @endif value="en">Английский</option>
                                                             </select>
-                                                        </div>
+                                                        </div>--}}
                                                         <div class="form-group">
                                                             <label>Вопрос</label>
-                                                            <textarea name="olympiad_test_question_name_ru" class=" form-control ckeditor"><?=$row->olympiad_test_question_name_ru?></textarea>
+                                                            <textarea name="olympiad_test_question_name_ru" class="ckeditor form-control text_editor"><?=$row->olympiad_test_question_name_ru?></textarea>
                                                         </div>
                                                         {{--<div class="form-group">
                                                             <label>Уровень</label>
