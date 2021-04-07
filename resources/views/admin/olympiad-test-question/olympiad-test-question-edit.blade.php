@@ -58,6 +58,15 @@
                                                             </select>
                                                         </div>--}}
                                                         <div class="form-group">
+                                                            <label>Уровень сложности</label>
+                                                            <select name="olympiad_test_question_level" data-placeholder="Выберите" class="form-control">
+                                                                <option @if($row->olympiad_test_question_level == '') selected @endif value="">Нет</option>
+                                                                <option @if($row->olympiad_test_question_level == 'a') selected @endif value="a">A</option>
+                                                                <option @if($row->olympiad_test_question_level == 'b') selected @endif value="b">B</option>
+                                                                <option @if($row->olympiad_test_question_level == 'c') selected @endif value="c">C</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label>Вопрос</label>
                                                             <textarea name="olympiad_test_question_name_ru" class="ckeditor form-control text_editor"><?=$row->olympiad_test_question_name_ru?></textarea>
                                                         </div>

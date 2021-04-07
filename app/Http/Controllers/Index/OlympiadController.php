@@ -152,11 +152,52 @@ class OlympiadController extends Controller
             return redirect('/olympiad/result/'.$user_olympiad_test->user_olympiad_test_id);
         }
 
-        $question_list = OlympiadTestQuestion::where('is_show',1)
-            ->orderByRaw('RAND()')
-            ->where('olympiad_test_id',$olympiad->olympiad_test_id)
-            ->take($olympiad->olympiad_test_question_count)
-            ->get();
+        if($olympiad->is_show_level == 1){
+            if($olympiad->olympiad_test_question_count == 0) $olympiad->olympiad_test_question_count = 3;
+
+            $olympiad_test_question_count = (int) ($olympiad->olympiad_test_question_count / 3);
+            $a_question_count = $olympiad_test_question_count;
+            $b_question_count = $olympiad_test_question_count;
+            $c_question_count = $olympiad_test_question_count;
+
+            if($olympiad->olympiad_test_question_count != ($a_question_count + $b_question_count + $c_question_count)){
+                $a_question_count = $olympiad->olympiad_test_question_count - ($b_question_count + $c_question_count);
+            }
+
+            $a_question_list = OlympiadTestQuestion::where('is_show',1)
+                ->orderByRaw('RAND()')
+                ->where('olympiad_test_question_level','a')
+                ->where('olympiad_test_id',$olympiad->olympiad_test_id)
+                ->take($a_question_count)
+                ->get();
+
+            $b_question_list = OlympiadTestQuestion::where('is_show',1)
+                ->orderByRaw('RAND()')
+                ->where('olympiad_test_question_level','b')
+                ->where('olympiad_test_id',$olympiad->olympiad_test_id)
+                ->take($b_question_count)
+                ->get();
+
+            $question_list = $a_question_list->merge($b_question_list); // Contains foo and bar.
+
+            $c_question_list = OlympiadTestQuestion::where('is_show',1)
+                ->orderByRaw('RAND()')
+                ->where('olympiad_test_question_level','c')
+                ->where('olympiad_test_id',$olympiad->olympiad_test_id)
+                ->take($c_question_count)
+                ->get();
+
+            $question_list = $question_list->merge($c_question_list); // Contains foo and bar.
+
+            $question_list = $question_list->shuffle();
+        }
+        else {
+            $question_list = OlympiadTestQuestion::where('is_show',1)
+                ->orderByRaw('RAND()')
+                ->where('olympiad_test_id',$olympiad->olympiad_test_id)
+                ->take($olympiad->olympiad_test_question_count)
+                ->get();
+        }
 
         $special_question_list = OlympiadTestQuestion::where('is_show',1)
             ->orderByRaw('RAND()')
@@ -166,6 +207,7 @@ class OlympiadController extends Controller
 
         $question_list = $question_list->merge($special_question_list); // Contains foo and bar.
 
+        $question_list = $question_list->shuffle();
 
         $deadline_time = date('Y-m-d H:i:s', strtotime('+'.$olympiad->olympiad_test_duration.' minutes', strtotime($user_olympiad_test->created_at)));
         $now_date = date('Y-m-d H:i:s');

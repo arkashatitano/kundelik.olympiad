@@ -88,6 +88,7 @@ class OlympiadTestController extends Controller
         $test->olympiad_test_image = $request->olympiad_test_image;
         $test->certificate_text = $request->certificate_text;
         $test->diploma_text = $request->diploma_text;
+        $test->is_show_level = $request->is_show_level;
         $test->olympiad_test_is_childhood = $request->olympiad_test_is_childhood;
         $test->olympiad_test_grade = $request->olympiad_test_grade;
         $test->certificate_type_id = $request->certificate_type_id;
@@ -158,6 +159,7 @@ class OlympiadTestController extends Controller
         $test->olympiad_test_image = $request->olympiad_test_image;
         $test->certificate_text = $request->certificate_text;
         $test->diploma_text = $request->diploma_text;
+        $test->is_show_level = $request->is_show_level;
         $test->olympiad_test_is_childhood = $request->olympiad_test_is_childhood;
         $test->certificate_type_id = $request->certificate_type_id;
         $test->olympiad_test_grade = $request->olympiad_test_grade;

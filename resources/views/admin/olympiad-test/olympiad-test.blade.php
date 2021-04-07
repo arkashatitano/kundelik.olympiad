@@ -120,7 +120,14 @@
                                         <p style="margin-bottom: 0px"><strong>Тип:</strong> {{$val['olympiad_type_name_ru']}}</p>
                                     @endif--}}
 
-                                        <p style="margin-bottom: 0px"><strong>Количество вопросов:</strong> {{$val['olympiad_test_question_count']}}</p>
+                                        <p style="margin-bottom: 0px"><strong>Количество обычных вопросов:</strong> {{$val['olympiad_test_question_count']}}</p>
+                                        <p style="margin-bottom: 0px"><strong>Количество общих вопросов:</strong> {{$val['special_question_count']}}</p>
+
+                                        @if($val->is_show_level == 1)
+                                            <p style="margin-bottom: 0px"><strong>Разделять вопросы по сложности:</strong> Да</p>
+                                        @else
+                                            <p style="margin-bottom: 0px"><strong>Разделять вопросы по сложности:</strong> Нет</p>
+                                        @endif
                                         {{--<p style="margin-bottom: 0px"><strong>Дизайн сертификата:</strong> {{$val['certificate_type_id']}}</p>
                                         <p style="margin-bottom: 0px"><strong>Минимальный балл для диплома:</strong> {{$val['min_point_to_diploma']}}</p>
                                         <p style="margin-bottom: 0px"><strong>Минимальный балл для 2 место:</strong> {{$val['min_point_to_second_place']}}</p>

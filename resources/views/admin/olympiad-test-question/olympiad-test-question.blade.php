@@ -57,6 +57,7 @@
                             <th style="width: 30px">№</th>
                             <th>Вопрос</th>
                             <th>Тест олимпиады</th>
+                            <th>Уровень сложности</th>
                             <th style="width: 15px"></th>
                             <th style="width: 15px"></th>
                             <th class="no-sort" style="width: 0px; text-align: center; padding-right: 16px; padding-left: 14px;" >
@@ -90,6 +91,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
+                            <td></td>
                         </tr>
 
                         @foreach($row as $key => $val)
@@ -105,6 +107,9 @@
                                     @else
                                         Вопрос по теме педагогике
                                     @endif
+                                </td>
+                                <td>
+                                    {!! $val['olympiad_test_question_level']!!}
                                 </td>
                                 <td style="text-align: center">
                                     <a href="javascript:void(0)" onclick="delItem(this,'{{ $val->olympiad_test_question_id }}','olympiad-test-question')">

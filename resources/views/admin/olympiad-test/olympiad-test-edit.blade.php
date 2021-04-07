@@ -63,6 +63,13 @@
                                                             <label>Количество общих вопросов (педагогика)</label>
                                                             <input value="{{ $row->special_question_count }}" type="number" class="form-control" name="special_question_count" placeholder="">
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label>Разделять вопросы по сложности</label>
+                                                            <select name="is_show_level" data-placeholder="Выберите" class="form-control">
+                                                                <option @if($row->is_show_level == 0) selected @endif value="0">Нет</option>
+                                                                <option @if($row->is_show_level == 1) selected @endif value="1">Да</option>
+                                                            </select>
+                                                        </div>
                                                         {{--<div class="form-group">
                                                             <label>Минимальный балл для диплома</label>
                                                             <input value="{{ $row->min_point_to_diploma }}" type="number" class="form-control" name="min_point_to_diploma" placeholder="">
