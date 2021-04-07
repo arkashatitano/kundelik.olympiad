@@ -82,7 +82,7 @@
 
                                             <label class="radio-container">
                                                 {!!$item2!!}
-                                                <input value="{{array_search($item2,$original_variants,false) + 1}}" type="radio" class="question_variant_{{$item->olympiad_test_question_id}}">
+                                                <input name="radio_{{$item->olympiad_test_question_id}}" value="{{array_search($item2,$original_variants,false) + 1}}" type="radio" class="question_variant_{{$item->olympiad_test_question_id}}">
                                                 <span class="checkmark">
                                                     <i class="icon check-mark-mini"></i>
                                                 </span>
