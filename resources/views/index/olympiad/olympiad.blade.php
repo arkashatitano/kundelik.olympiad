@@ -41,7 +41,7 @@
 
                                 @for($i = 1; $i <= count($question_list); $i++)
 
-                                    <li @if($i == 1) class="active" @endif>
+                                    <li class="question-tab-{{$i}} @if($i == 1) active @endif">
                                         <a class="test-number" href="javascript:void(0)" onclick="showQuestion(this,'{{$i}}')">{{$i}}</a>
                                     </li>
 
@@ -97,6 +97,7 @@
 
                         </div>
                         <div class="testBox-bottom">
+                            <button style="margin-right: 10px" class="btn-plain btn-main" onclick="showNextQuestion()">Далее</button>
                             <button class="btn-plain btn-main" onclick="sendOlympiadTestVariants()">Закончить тестирование</button>
                         </div>
                     </div>
@@ -165,6 +166,24 @@
             $('.testDetail').fadeOut(0);
             $('.question_' + i).fadeIn(0);
         }
+
+        var g_current_question = 1;
+
+        function showNextQuestion() {
+            g_current_question++;
+
+            if(g_current_question == (parseInt(g_question_count) + 1)){
+                sendOlympiadTestVariants();
+                return;
+            }
+
+            $('.test-number').closest('li').removeClass('active');
+            $('.question-tab-' + g_current_question).addClass('active');
+            $('.testDetail').fadeOut(0);
+            $('.question_' + g_current_question).fadeIn(0);
+        }
+
+
     </script>
 
     <script type="text/x-mathjax-config">
