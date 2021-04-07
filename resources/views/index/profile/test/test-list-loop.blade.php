@@ -31,7 +31,7 @@
                     </div>
                     <div class="progress-info">
                         <i class="icon check-green"></i>
-                        <span>Пройдено</span>
+                        <span>Пройдено, вы набрали <strong>{{$item->score}}</strong> баллов</span>
                     </div>
                 </div>
                 <a class="btn-plain btn-dark" href="#">
