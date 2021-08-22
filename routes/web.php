@@ -69,6 +69,8 @@ Route::group([
 
     Route::get('/', 'IndexController@index');
 
+    Route::get('certificate/{id}', 'CertificateController@getCertificate');
+
     Route::group([
         'prefix' => 'test'
     ], function() {
@@ -79,14 +81,18 @@ Route::group([
 
     });
 
+    Route::get('login', 'AuthController@showLogin');
+    Route::post('login', 'AuthController@login');
+
     Route::group([
         'prefix' => 'auth'
     ], function() {
-        Route::get('login', 'AuthController@showLogin');
+        Route::get('login', 'AuthController@showLogin')->name('login');
         Route::get('register', 'AuthController@showRegister');
         Route::post('login', 'AuthController@login');
         Route::post('register', 'AuthController@register');
     });
+
 
     Route::group([
         'prefix' => 'profile'

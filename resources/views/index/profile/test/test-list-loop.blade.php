@@ -34,7 +34,7 @@
                         <span>Пройдено, вы набрали <strong>{{$item->score}}</strong> баллов</span>
                     </div>
                 </div>
-                <a class="btn-plain btn-dark" href="#">
+                <a target="_blank" class="btn-plain btn-dark" href="/certificate/{{$item->user_olympiad_test_id}}">
                     <i class="icon icon-doc"></i>
                     <span>Скачать сертификат</span>
                 </a>
