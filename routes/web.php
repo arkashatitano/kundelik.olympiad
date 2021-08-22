@@ -68,7 +68,6 @@ Route::group([
 ], function() {
 
     Route::get('/', 'IndexController@index');
-
     Route::get('certificate/{id}', 'CertificateController@getCertificate');
 
     Route::group([
