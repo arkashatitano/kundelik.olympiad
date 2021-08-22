@@ -80,6 +80,7 @@ Route::group([
 
     });
 
+
     Route::get('login', 'AuthController@showLogin');
     Route::post('login', 'AuthController@login');
 
