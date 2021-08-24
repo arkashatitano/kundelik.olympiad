@@ -66,8 +66,8 @@
                                                                 <option @if($row->is_show_level == 1) selected @endif value="1">Да</option>
                                                             </select>
                                                         </div>
-                                                        {{--<div class="form-group">
-                                                            <label>Минимальный балл для диплома</label>
+                                                        <div class="form-group">
+                                                            <label>Минимальный балл для 3 место</label>
                                                             <input value="{{ $row->min_point_to_diploma }}" type="number" class="form-control" name="min_point_to_diploma" placeholder="">
                                                         </div>
                                                         <div class="form-group">
@@ -77,7 +77,7 @@
                                                         <div class="form-group">
                                                             <label>Минимальный балл для 1 место</label>
                                                             <input value="{{ $row->min_point_to_first_place }}" type="number" class="form-control" name="min_point_to_first_place" placeholder="">
-                                                        </div>--}}
+                                                        </div>
                                                         <div class="form-group">
                                                             <label>Длительность теста (минута)</label>
                                                             <div>

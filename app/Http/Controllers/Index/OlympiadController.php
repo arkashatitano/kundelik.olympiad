@@ -301,7 +301,13 @@ class OlympiadController extends Controller
             }
         }
 
-        if($correct_answer >= $olympiad->min_point_to_diploma){
+        if($correct_answer >= $olympiad->min_point_to_first_place){
+            $user_olympiad_test->is_has_diploma = 1;
+        }
+        elseif($correct_answer >= $olympiad->min_point_to_second_place){
+            $user_olympiad_test->is_has_diploma = 2;
+        }
+        elseif($correct_answer >= $olympiad->min_point_to_diploma){
             $user_olympiad_test->is_has_diploma = 1;
         }
 
