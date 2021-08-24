@@ -48,10 +48,6 @@
                                                             <input value="{{ $row->olympiad_test_name_ru }}" type="text" class="form-control" name="olympiad_test_name_ru" placeholder="">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Краткое описание</label>
-                                                            <textarea name="olympiad_test_desc_ru" class="form-control"><?=$row->olympiad_test_desc_ru?></textarea>
-                                                        </div>
-                                                        <div class="form-group">
                                                             <label>Стоимость</label>
                                                             <input value="{{ $row->olympiad_test_cost }}" type="number" class="form-control" name="olympiad_test_cost" placeholder="">
                                                         </div>
@@ -149,16 +145,16 @@
                                                             <input value="{{ $row->sort_num }}" type="text" class="form-control" name="sort_num" placeholder="">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Текст сертификата</label>
-                                                            <textarea id="" name="certificate_text" class="ckeditor form-control text_editor"><?=$row->certificate_text?></textarea>
+                                                            <label>Текст сертификата (Первое место)</label>
+                                                            <textarea id="" name="certificate_text_1" class="ckeditor form-control text_editor"><?=$row->certificate_text_1?></textarea>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Текст диплома</label>
-                                                            <textarea id="" name="diploma_text" class="ckeditor form-control text_editor"><?=$row->diploma_text?></textarea>
+                                                            <label>Текст сертификата (Второе место)</label>
+                                                            <textarea id="" name="certificate_text_2" class="ckeditor form-control text_editor"><?=$row->certificate_text_2?></textarea>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Текст (правила)</label>
-                                                            <textarea id="" name="olympiad_test_text_ru" class="ckeditor form-control text_editor"><?=$row->olympiad_test_text_ru?></textarea>
+                                                            <label>Текст сертификата (Третье место)</label>
+                                                            <textarea id="" name="certificate_text_3" class="ckeditor form-control text_editor"><?=$row->certificate_text_3?></textarea>
                                                         </div>
                                                     </div>
                                                 </div>

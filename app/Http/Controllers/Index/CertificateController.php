@@ -15,6 +15,7 @@ use App\Models\OlympiadTest;
 use App\Models\OlympiadTestQuestion;
 use App\Models\Operation;
 use App\Models\Page;
+use Barryvdh\DomPDF\Facade as PDF;
 use Dompdf\Dompdf;
 
 use App\Models\Question;
@@ -63,8 +64,11 @@ class CertificateController extends Controller
             ->where('user_olympiad_test.is_success',1)
             ->select('user_olympiad_test.*',
                 'users.name',
+                'olympiad_test.olympiad_test_name_ru',
                 'olympiad_test.certificate_type_id',
-                'olympiad_test.certificate_text',
+                'olympiad_test.certificate_text_1',
+                'olympiad_test.certificate_text_2',
+                'olympiad_test.certificate_text_3',
                 'user_olympiad_test.score as score',
                 DB::raw('DATE_FORMAT(user_olympiad_test.created_at,"%d.%m.%Y") as date')
             )
@@ -78,35 +82,14 @@ class CertificateController extends Controller
             $certificate = $this->addCertificate($user_olympiad_test_id);
         }
 
-        $user_olympiad_test['certificate_name'] = $certificate->certificate_name;
+        $certificate->info = $user_olympiad_test;
 
-        $dompdf = new Dompdf();
-        $dompdf->set_paper('A4', 'landscape');
-        $dompdf->set_option('isHtml5ParserEnabled', true);
-        $dompdf->set_option('isRemoteEnabled', true);
+        // share data to view
+        view()->share('row',$certificate);
+        $pdf = PDF::loadView('index.certificate.certificate', $certificate);
 
-     /*   return view('index.certificate.certificate',
-            [
-                'row' => $user_olympiad_test,
-                'certificate' => $certificate
-            ]);*/
-
-        $dompdf->loadHtml(view('index.certificate.certificate',
-            [
-                'row' => $user_olympiad_test,
-                'certificate' => $certificate
-            ]
-        ));
-
-        $file_name = 'pdf/'.$user_olympiad_test->user_olympiad_test_id.'-'.Auth::user()->user_id.'.pdf';
-
-        $dompdf->render();
-        file_put_contents($file_name, $dompdf->output());
-
-        $user_olympiad_test->file = $file_name;
-        $user_olympiad_test->save();
-
-        return redirect($file_name);
+        // download PDF file with download method
+        return $pdf->download('pdf_file.pdf');
     }
 
     public function addCertificate($user_olympiad_test_id)

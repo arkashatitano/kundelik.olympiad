@@ -83,11 +83,11 @@ class OlympiadTestController extends Controller
 
         $test = new OlympiadTest();
         $test->olympiad_test_name_ru = $request->olympiad_test_name_ru;
-        $test->olympiad_test_desc_ru = $request->olympiad_test_desc_ru;
+        $test->certificate_text_1 = $request->certificate_text_1;
+        $test->certificate_text_2 = $request->certificate_text_2;
+        $test->certificate_text_3 = $request->certificate_text_3;
         $test->olympiad_test_text_ru = $request->olympiad_test_text_ru;
         $test->olympiad_test_image = $request->olympiad_test_image;
-        $test->certificate_text = $request->certificate_text;
-        $test->diploma_text = $request->diploma_text;
         $test->is_show_level = $request->is_show_level;
         $test->olympiad_test_is_childhood = $request->olympiad_test_is_childhood;
         $test->olympiad_test_grade = $request->olympiad_test_grade;
@@ -154,11 +154,10 @@ class OlympiadTestController extends Controller
 
         $test = OlympiadTest::find($id);
         $test->olympiad_test_name_ru = $request->olympiad_test_name_ru;
-        $test->olympiad_test_desc_ru = $request->olympiad_test_desc_ru;
-        $test->olympiad_test_text_ru = $request->olympiad_test_text_ru;
+        $test->certificate_text_1 = $request->certificate_text_1;
+        $test->certificate_text_2 = $request->certificate_text_2;
+        $test->certificate_text_3 = $request->certificate_text_3;
         $test->olympiad_test_image = $request->olympiad_test_image;
-        $test->certificate_text = $request->certificate_text;
-        $test->diploma_text = $request->diploma_text;
         $test->is_show_level = $request->is_show_level;
         $test->olympiad_test_is_childhood = $request->olympiad_test_is_childhood;
         $test->certificate_type_id = $request->certificate_type_id;
