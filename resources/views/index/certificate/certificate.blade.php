@@ -9,7 +9,7 @@
         body {
             margin: 0px;
             padding: 0px;
-            background: url("{{'img/gold.png'}}") no-repeat center/contain;
+            background: url("{{'img/'.$row->type.'.png?v=1'}}") no-repeat center/contain;
             background-size: 100% 100%;
             margin-left: -3px;
         }

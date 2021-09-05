@@ -89,6 +89,13 @@ class CertificateController extends Controller
 
         $certificate->second_text = Helpers::getInfoText(53);
 
+        $certificate->type = 'gold';
+
+        if($user_olympiad_test->is_has_diploma == 2)
+            $certificate->type = 'silver';
+        elseif($user_olympiad_test->is_has_diploma == 3)
+            $certificate->type = 'bronze';
+
         // share data to view
         view()->share('row',$certificate);
         $pdf = PDF::loadView('index.certificate.certificate', $certificate);
