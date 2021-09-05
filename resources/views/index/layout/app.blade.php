@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/libs.min.css">
     <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="/img/main/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/main/logo.png?v=1" type="image/x-icon">
 
     <link href="/custom/css/main.css?v=318" rel="stylesheet" type="text/css">
 </head>

@@ -35,11 +35,11 @@
         <div class="container">
             <section class="olympiad">
                 <h2 class="olympiad-title">Олимпиады</h2>
-                <div class="olympiad-tab">
+                {{--<div class="olympiad-tab">
                     <button class="btn-plain olympiad-tablink active" onclick="showMainTestList(this,2)">Все</button>
                     <button class="btn-plain olympiad-tablink" onclick="showMainTestList(this,1)">Для школьников</button>
                     <button class="btn-plain olympiad-tablink" onclick="showMainTestList(this,0)">Для преподавателей</button>
-                </div>
+                </div>--}}
                 <div class="olympiad-item-wrapper">
                     @include('index.index.test-list-loop')
                 </div>

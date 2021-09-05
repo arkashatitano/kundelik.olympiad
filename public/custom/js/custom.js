@@ -553,7 +553,7 @@ function registerAjax() {
                 return;
             }
 
-            window.location.href = '/profile';
+            window.location.href = '/';
         }
     });
 }

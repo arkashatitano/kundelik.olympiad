@@ -77,8 +77,8 @@ class OlympiadController extends Controller
         }
 
         if(!Auth::check()){
-            $result['error'] = Lang::get('app.must_login_done_test');
-            $result['status'] = false;
+            $result['redirect'] = '/auth/login';
+            $result['status'] = true;
             return response()->json($result);
         }
 

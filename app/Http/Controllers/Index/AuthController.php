@@ -187,7 +187,7 @@ class AuthController extends Controller
             if(Auth::user()->role_id == 1)
                 return redirect('/admin/menu');
 
-            return redirect('profile');
+            return redirect('/');
         }
         catch(Exception $ex){
             return  view('index.auth.login', [
@@ -246,7 +246,7 @@ class AuthController extends Controller
                 return response()->json($result);
             }
 
-            $result['redirect'] = '/profile';
+            $result['redirect'] = '/';
             $result['status'] = true;
             return response()->json($result);
         }

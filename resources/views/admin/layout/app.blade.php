@@ -6,8 +6,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <!-- Favicon icon -->
-  <link rel="icon" href="/favicon.ico">
- <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/main/logo.png?v=1" type="image/x-icon">
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
 

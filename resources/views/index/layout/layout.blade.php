@@ -14,7 +14,7 @@
 
 <script src="/js/libs.min.js"></script>
 <script src="/js/main.js"></script>
-<script src="/custom/js/custom.js"></script>
+<script src="/custom/js/custom.js?v=1"></script>
 
 @yield('js')
 
