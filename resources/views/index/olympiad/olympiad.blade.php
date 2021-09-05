@@ -98,7 +98,7 @@
                         </div>
                         <div class="testBox-bottom">
                             <button style="margin-right: 10px" class="btn-plain btn-main" onclick="showNextQuestion()">Далее</button>
-                            <button class="btn-plain btn-main" onclick="sendOlympiadTestVariants()">Закончить тестирование</button>
+                            <button class="btn-plain btn-main" onclick="closeTestModal()">Закончить тестирование</button>
                         </div>
                     </div>
                     <div class="testTime">
@@ -111,6 +111,22 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal test-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 id="modal_title"></h6>
+                <button class="btn-plain modal-close">
+                    <i class="icon close-grey"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Вы уверены? Закрыв тестирование вы используете свою попытку</p>
+                <button class="btn-plain btn-main modal-close">Продолжить тестирование</button>
+                <button class="btn-plain btn-main" onclick="sendOlympiadTestVariants()" style="margin-top: 10px">Закончить тестирование</button>
             </div>
         </div>
     </div>
@@ -155,10 +171,9 @@
 
     <script>
 
-        //modal
-        $('.testBox-bottom').find('.btn-main').click(function (){
+        function closeTestModal() {
             $('.test-modal').modal('show');
-        });
+        }
 
         function showQuestion(ob,i) {
             $('.test-number').closest('li').removeClass('active');
@@ -174,7 +189,7 @@
             g_current_question++;
 
             if(g_current_question == (parseInt(g_question_count) + 1)){
-                sendOlympiadTestVariants();
+                $('.test-modal').modal('show');
                 return;
             }
 
@@ -183,7 +198,6 @@
             $('.testDetail').fadeOut(0);
             $('.question_' + g_current_question).fadeIn(0);
         }
-
 
     </script>
 
