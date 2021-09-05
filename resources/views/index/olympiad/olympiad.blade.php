@@ -60,7 +60,7 @@
                                     $original_variants = array();
                                     ?>
 
-                                    @for($i = 1; $i <= 5; $i++)
+                                    @for($i = 1; $i <= 8; $i++)
 
                                         @if($item['variant'.$i] != '')
                                             <?php $variants[] = $item['variant'.$i]; ?>

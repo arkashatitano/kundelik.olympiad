@@ -114,6 +114,9 @@ class OlympiadTestQuestionController extends Controller
         $question->variant3 = $request->variant3;
         $question->variant4 = $request->variant4;
         $question->variant5 = $request->variant5;
+        $question->variant6 = $request->variant6;
+        $question->variant7 = $request->variant7;
+        $question->variant8 = $request->variant8;
         $question->correct_variant = $request->correct_variant;
         $question->olympiad_test_id = ($request->olympiad_test_id > 0)?$request->olympiad_test_id:null;
         $question->is_show = 1;
@@ -177,6 +180,9 @@ class OlympiadTestQuestionController extends Controller
         $question->variant3 = $request->variant3;
         $question->variant4 = $request->variant4;
         $question->variant5 = $request->variant5;
+        $question->variant6 = $request->variant6;
+        $question->variant7 = $request->variant7;
+        $question->variant8 = $request->variant8;
         $question->correct_variant = $request->correct_variant;
         $question->olympiad_test_id = ($request->olympiad_test_id > 0)?$request->olympiad_test_id:null;
         $question->is_show = 1;

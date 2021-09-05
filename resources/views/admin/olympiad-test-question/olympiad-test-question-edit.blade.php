@@ -95,10 +95,22 @@
                                                             <textarea name="variant5" class=" form-control ckeditor"><?=$row->variant5?></textarea>
                                                         </div>
                                                         <div class="form-group">
+                                                            <label>6 вариант</label>
+                                                            <textarea name="variant6" class=" form-control ckeditor"><?=$row->variant6?></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>7 вариант</label>
+                                                            <textarea name="variant7" class=" form-control ckeditor"><?=$row->variant7?></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>8 вариант</label>
+                                                            <textarea name="variant8" class=" form-control ckeditor"><?=$row->variant8?></textarea>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label>Правильный вариант</label>
                                                             <select name="correct_variant" class="form-control" >
 
-                                                                @for($i = 1; $i <= 5; $i++)
+                                                                @for($i = 1; $i <= 8; $i++)
 
                                                                     <option @if($row->correct_variant == $i) selected="selected" @endif value="{{$i}}">{{$i}}</option>
 
