@@ -149,18 +149,6 @@
                                                             <label>Порядковый номер сортировки</label>
                                                             <input value="{{ $row->sort_num }}" type="text" class="form-control" name="sort_num" placeholder="">
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label>Текст сертификата (Первое место)</label>
-                                                            <textarea id="" name="certificate_text_1" class="ckeditor form-control text_editor"><?=$row->certificate_text_1?></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Текст сертификата (Второе место)</label>
-                                                            <textarea id="" name="certificate_text_2" class="ckeditor form-control text_editor"><?=$row->certificate_text_2?></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Текст сертификата (Третье место)</label>
-                                                            <textarea id="" name="certificate_text_3" class="ckeditor form-control text_editor"><?=$row->certificate_text_3?></textarea>
-                                                        </div>
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane" id="certificate" role="tabpanel">
@@ -180,9 +168,11 @@
                                                     </div>
                                                 </div>
                                                 <div class="tab-pane" id="rule" role="tabpanel">
-                                                    <div class="form-group">
-                                                        <label>Текст правилы</label>
-                                                        <textarea name="olympiad_rule" class="ckeditor form-control text_editor"><?=$row->olympiad_rule?></textarea>
+                                                    <div class="card-block">
+                                                        <div class="form-group">
+                                                            <label>Текст правилы</label>
+                                                            <textarea name="olympiad_rule" class="ckeditor form-control text_editor"><?=$row->olympiad_rule?></textarea>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
