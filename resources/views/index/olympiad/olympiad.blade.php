@@ -51,7 +51,7 @@
 
                             @foreach($question_list as $key => $item)
 
-                                <div class="testDetail question_{{$key}}" @if($key > 0) style="display: none" @endif>
+                                <div class="testDetail question_{{$key + 1}}" @if($key > 0) style="display: none" @endif>
 
                                     <input type="hidden" value="{{$item->olympiad_test_question_id}}" class="question_id"/>
 
