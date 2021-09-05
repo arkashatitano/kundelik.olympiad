@@ -22,6 +22,8 @@
                         <a class="login-link btn-transparent" href="/auth/login">Войти</a>
                         <a class="registration-link btn-main" href="/auth/register">Регистрация</a>
                     @endif
+                    <a @if($lang == 'ru') style="text-decoration: underline" @endif href="javascript:void(0)" onclick="setLangSite('ru')">RU</a>
+                    <a @if($lang == 'kz') style="text-decoration: underline" @endif href="javascript:void(0)" onclick="setLangSite('kz')">KZ</a>
                 </div>
             </div>
             <button class="btn-plain call-menu">
