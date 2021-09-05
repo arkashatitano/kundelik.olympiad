@@ -66,6 +66,18 @@
             position: absolute;
             left: 205px;
         }
+        .sertificate-number {
+            width: 400px;
+            margin: auto;
+            text-align: center;
+            top: 20px;
+            position: absolute;
+            left: 205px;
+        }
+        .sertificate-number p {
+            font-size: 14px;
+            margin-top: 0px;
+        }
         .sertificate-date b {
             font-size: 14px;
             margin-bottom: 0px;
@@ -82,6 +94,9 @@
     <div class="clearfix row">
         <div class="col-md-12">
             <div class="sertificate">
+                <div class="sertificate-number">
+                    <p>№{{$row->certificate_name}}</p>
+                </div>
                 <div class="sertificate-olympiad-name">
                     <h4>{{$row->info->olympiad_test_name_ru}}</h4>
                 </div>
@@ -91,17 +106,11 @@
                 <div class="sertificate-text">
                     <p>{!! $row->info->certificate_text_1 !!}</p>
                 </div>
-                <div class="sertificate-date" style="top: 870px; left: 165px; text-align: left; width: 200px">
-                    <p style="line-height: 15px">
-                        Директор "Күнделік"
-                        Болатбек Болатбеков
-                    </p>
+                <div class="sertificate-date" style="top: 870px; left: 165px; text-align: left; width: 200px; line-height: 15px">
+                    {!!$row->first_text!!}
                 </div>
-                <div class="sertificate-date" style="top: 870px; left: 433px; text-align: right; width: 200px">
-                    <p style="line-height: 15px">
-                        Директор <br/>
-                        Абай Абаевич
-                    </p>
+                <div class="sertificate-date" style="top: 870px; left: 433px; text-align: right; width: 200px; line-height: 15px">
+                    {!!$row->second_text!!}
                 </div>
                 <div class="sertificate-date">
                     <p>Дата выдачи</p>

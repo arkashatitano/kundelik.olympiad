@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Certificate;
 use App\Models\Contact;
 use App\Models\EntQuestion;
+use App\Models\Info;
 use App\Models\Menu;
 use App\Models\ObjectDB;
 use App\Models\ObjectPair;
@@ -83,6 +84,10 @@ class CertificateController extends Controller
         }
 
         $certificate->info = $user_olympiad_test;
+
+        $certificate->first_text = Helpers::getInfoText(52);
+
+        $certificate->second_text = Helpers::getInfoText(53);
 
         // share data to view
         view()->share('row',$certificate);
