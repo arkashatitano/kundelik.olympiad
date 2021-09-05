@@ -22,7 +22,7 @@
         <div class="container">
             <div class="slider-content">
                 <div class="slider-caption">
-                    <h1>{{\App\Http\Helpers::getInfoText(51)}}</h1>
+                    <h1>{!!\App\Http\Helpers::getInfoText(51)!!}</h1>
                     {{--<a class="btn-main" href="#">Участвовать</a>--}}
                 </div>
                 <div class="slider-img">
