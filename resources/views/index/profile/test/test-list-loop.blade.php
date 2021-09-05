@@ -16,7 +16,7 @@
                     </div>
 
                 </div>
-                <a class="btn-plain btn-main" href="/test/{{$item->olympiad_test_id}}/{{$item->user_olympiad_test_id}}">Начать тест</a>
+                <a class="btn-plain btn-main" href="/test/{{$item->olympiad_test_id}}/{{$item->user_olympiad_test_id}}">@lang('messages.start_test')</a>
 
             </div>
 
@@ -38,7 +38,7 @@
                 @if($item->is_has_diploma > 0)
                     <a target="_blank" class="btn-plain btn-dark" href="/certificate/{{$item->user_olympiad_test_id}}">
                         <i class="icon icon-doc"></i>
-                        <span>Скачать сертификат</span>
+                        <span>@lang('messages.download_certificate')</span>
                     </a>
                 @endif
 

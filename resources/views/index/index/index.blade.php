@@ -34,7 +34,7 @@
     <article class="intro">
         <div class="container">
             <section class="olympiad">
-                <h2 class="olympiad-title">Олимпиады</h2>
+                <h2 class="olympiad-title">@lang('messages.olympiads')</h2>
                 {{--<div class="olympiad-tab">
                     <button class="btn-plain olympiad-tablink active" onclick="showMainTestList(this,2)">Все</button>
                     <button class="btn-plain olympiad-tablink" onclick="showMainTestList(this,1)">Для школьников</button>
@@ -47,19 +47,19 @@
             <section class="counter">
                 <div class="counter-item">
                     <h4 class="counter-stat">241</h4>
-                    <p>Получили сертификат</p>
+                    <p>@lang('messages.get_certificate')</p>
                 </div>
                 <div class="counter-item">
                     <h4 class="counter-stat">48</h4>
-                    <p>Участвуют в олимпиаде</p>
+                    <p>@lang('messages.do_olympiads')</p>
                 </div>
                 <div class="counter-item">
                     <h4 class="counter-stat">1092</h4>
-                    <p>Олимпиады пройдено</p>
+                    <p>@lang('messages.did_olympiads')</p>
                 </div>
                 <div class="counter-item">
                     <h4 class="counter-stat">2491</h4>
-                    <p>Участвуют</p>
+                    <p>@lang('messages.all_users')</p>
                 </div>
             </section>
         </div>
@@ -76,9 +76,9 @@
             <div class="modal-body">
                 <p></p>
                 <a id="modal_rule" href="/test/desc" target="_blank">
-                    <button class="btn-plain btn-main">Как пройти тест</button>
+                    <button class="btn-plain btn-main">@lang('messages.how_test')</button>
                 </a>
-                <button class="btn-plain btn-main" onclick="buyOlympiadTest()">Участвовать</button>
+                <button style="margin-top: 10px" class="btn-plain btn-main" onclick="buyOlympiadTest()">@lang('messages.do_it')</button>
             </div>
         </div>
     </div>

@@ -17,9 +17,9 @@
                 <div class="header-authorize">
                     @if(Auth::check())
                         <a class="login-link btn-transparent" href="/profile">Профиль</a>
-                        <a class="registration-link btn-main" href="/profile/test">Мои тесты</a>
+                        <a class="registration-link btn-main" href="/profile/test">@lang('messages.my_test')</a>
                     @else
-                        <a class="login-link btn-transparent" href="/auth/login">Войти</a>
+                        <a class="login-link btn-transparent" href="/auth/login">@lang('messages.login')</a>
                         <a class="registration-link btn-main" href="/auth/register">Регистрация</a>
                     @endif
                     <a @if($lang == 'ru') style="text-decoration: underline" @endif href="javascript:void(0)" onclick="setLangSite('ru')">RU</a>
