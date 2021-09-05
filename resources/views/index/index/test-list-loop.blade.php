@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="olympiad-item-bottom">
-            <a class="btn-plain btn-main" href="javascript:void(0)" onclick="payOlympiad('{{$item->olympiad_test_id}}',0)">Участвовать {{$item->olympiad_test_cost}} ₸</a>
+            <a class="btn-plain btn-main" href="javascript:void(0)" onclick="payOlympiad(this,'{{$item->olympiad_test_id}}',0)">Участвовать {{$item->olympiad_test_cost}} ₸</a>
         </div>
     </div>
 

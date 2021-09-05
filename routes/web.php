@@ -74,6 +74,7 @@ Route::group([
         'prefix' => 'test'
     ], function() {
 
+        Route::get('desc/{olympiad_test_id}', 'OlympiadController@showTestRule');
         Route::get('{olympiad_test_id}/{user_olympiad_test_id}', 'OlympiadController@showTestById');
         Route::post('pay', 'OlympiadController@payTest');
         Route::post('submit', 'OlympiadController@submitTest');

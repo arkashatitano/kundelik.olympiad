@@ -65,6 +65,24 @@
         </div>
     </article>
 
+    <div class="modal test-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 id="modal_title"></h6>
+                <button class="btn-plain modal-close">
+                    <i class="icon close-grey"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p></p>
+                <a id="modal_rule" href="/test/desc" target="_blank">
+                    <button class="btn-plain btn-main">Как пройти тест</button>
+                </a>
+                <button class="btn-plain btn-main" onclick="buyOlympiadTest()">Участвовать</button>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('footer')

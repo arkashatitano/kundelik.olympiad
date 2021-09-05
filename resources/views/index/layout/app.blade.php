@@ -10,7 +10,7 @@
 
     <link rel="shortcut icon" href="/img/main/logo.png?v=1" type="image/x-icon">
 
-    <link href="/custom/css/main.css?v=318" rel="stylesheet" type="text/css">
+    <link href="/custom/css/main.css?v=319" rel="stylesheet" type="text/css">
 </head>
 
 <!-- /Yandex.Metrika counter -->

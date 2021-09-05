@@ -40,7 +40,12 @@
                                         <input type="hidden" class="image-name2" id="olympiad_test_image2" name="olympiad_test_icon" value="{{ $row->olympiad_test_icon }}"/>
 
                                         <div class="box-body">
-
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#info" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Информация</span></a> </li>
+                                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#certificate" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Сертификат</span></a> </li>
+                                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#rule" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">Правила</span></a> </li>
+                                            </ul>
+                                            <div class="tab-content tabcontent-border">
                                                 <div class="tab-pane active" id="info" role="tabpanel">
                                                     <div class="card-block">
                                                         <div class="form-group">
@@ -158,8 +163,29 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
-
+                                                <div class="tab-pane" id="certificate" role="tabpanel">
+                                                    <div class="card-block">
+                                                        <div class="form-group">
+                                                            <label>Текст сертификата (Первое место)</label>
+                                                            <textarea id="" name="certificate_text_1" class="ckeditor form-control text_editor"><?=$row->certificate_text_1?></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Текст сертификата (Второе место)</label>
+                                                            <textarea id="" name="certificate_text_2" class="ckeditor form-control text_editor"><?=$row->certificate_text_2?></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Текст сертификата (Третье место)</label>
+                                                            <textarea id="" name="certificate_text_3" class="ckeditor form-control text_editor"><?=$row->certificate_text_3?></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="tab-pane" id="rule" role="tabpanel">
+                                                    <div class="form-group">
+                                                        <label>Текст правилы</label>
+                                                        <textarea name="olympiad_rule" class="ckeditor form-control text_editor"><?=$row->olympiad_rule?></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="box-footer">
                                             <button type="submit" class="btn btn-primary">Сохранить</button>

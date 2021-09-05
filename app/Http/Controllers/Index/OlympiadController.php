@@ -224,6 +224,26 @@ class OlympiadController extends Controller
             ]);
     }
 
+    public function showTestRule(Request $request,$olympiad_test_id){
+
+        $olympiad = OlympiadTest::orderBy('sort_num','asc')
+            ->where('olympiad_test_id',$olympiad_test_id)
+            ->select(
+                'olympiad_test.*'
+            );
+
+        if(!Auth::check() || Auth::user()->role_id != 1) $olympiad->where('is_show',1);
+
+        $olympiad = $olympiad->first();
+
+        if($olympiad == null) abort(404);
+        
+        return view('index.olympiad.rule',
+            [
+                'olympiad' => $olympiad
+            ]);
+
+    }
     public function submitTest(Request $request)
     {
         $validator = Validator::make($request->all(), [

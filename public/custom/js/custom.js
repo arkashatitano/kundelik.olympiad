@@ -464,9 +464,11 @@ $(function() {
 
 g_olympiad_test_id = 0;
 
-function payOlympiad(olympiad_test_id,cost){
+function payOlympiad(ob,olympiad_test_id,cost){
     g_olympiad_test_id = olympiad_test_id;
-    buyOlympiadTest();
+    $('#modal_title').html($(ob).closest('.olympiad-item').find('h3').html());
+    $('#modal_rule').attr('href','/test/desc/' + olympiad_test_id);
+    $('.test-modal').modal('show');
 }
 
 function buyOlympiadTest(){

@@ -253,7 +253,9 @@
     display: inline-block;
     opacity: 1;
 }
-
+.page-info {
+    min-height: 400px;
+}
 @media screen and (max-width: 380px){
 
 }
